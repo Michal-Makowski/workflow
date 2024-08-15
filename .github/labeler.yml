@@ -4,6 +4,9 @@ Documentation:
   - changed-files:
       - any-glob-to-any-file: "**/*.md"
 README:
-  - "README.md"
+  - changed-files:
+      - any-glob-to-any-file: "**/README.md"
+  - ""
 DONTREADME:
-  - "DONTREADME.md"
+  - changed-files:
+      - any-glob-to-any-file: "**/DONTREADME.md"
