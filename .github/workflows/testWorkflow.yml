@@ -1,0 +1,61 @@
+name: Test Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Sleep for 30 seconds
+        run: sleep 30
+
+  sonarqube:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Sleep for 30 seconds
+        run: sleep 30
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Queue Job Checker
+        uses: Michal-Makowski/queue@main
+        with:
+          queue-jobs: "deploy,test"
+          min-wait-time: 30
+          max-wait-time: 60
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Sleep for 30 seconds
+        run: sleep 30
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Sleep for 30 seconds
+        run: sleep 30
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Sleep for 30 seconds
+        run: sleep 30
