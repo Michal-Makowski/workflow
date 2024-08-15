@@ -18,6 +18,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Sleep for 30 seconds
         run: sleep 30
+      - name: Run Queue Job Checker
+        uses: Michal-Makowski/queue@main
+        with:
+          queue-jobs: "deploy,test"
+          min-wait-time: 30
+          max-wait-time: 60
 
   sonarqube:
     runs-on: ubuntu-latest
@@ -32,13 +38,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run Queue Job Checker
-        uses: Michal-Makowski/queue@main
-        with:
-          queue-jobs: "deploy,test"
-          min-wait-time: 30
-          max-wait-time: 60
-
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Sleep for 30 seconds
