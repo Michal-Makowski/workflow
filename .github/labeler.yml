@@ -3,10 +3,3 @@ release:
 Documentation:
   - changed-files:
       - any-glob-to-any-file: "**/*.md"
-README:
-  - changed-files:
-      - any-glob-to-any-file: "**/README.md"
-  - ""
-DONTREADME:
-  - changed-files:
-      - any-glob-to-any-file: "**/DONTREADME.md"
