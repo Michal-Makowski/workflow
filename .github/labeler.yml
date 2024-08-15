@@ -1,0 +1,9 @@
+release:
+  - base-branch: "main"
+Documentation:
+  - changed-files:
+      - any-glob-to-any-file: "**/*.md"
+README:
+  - "README.md"
+DONTREADME:
+  - "DONTREADME.md"
