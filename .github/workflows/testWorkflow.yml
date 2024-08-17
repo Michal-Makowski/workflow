@@ -22,8 +22,8 @@ jobs:
         uses: Michal-Makowski/queue@main
         with:
           queue-jobs: "deploy,test"
-          min-wait-time: 30
-          max-wait-time: 60
+          min-wait-time: 5
+          max-wait-time: 10
 
   sonarqube:
     runs-on: ubuntu-latest
