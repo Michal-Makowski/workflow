@@ -21,7 +21,7 @@ jobs:
       - name: Run Queue Job Checker
         uses: Michal-Makowski/queue@main
         with:
-          queue-jobs: "deploy,test"
+          queue-jobs: "deploy;test"
           min-wait-time: 5
           max-wait-time: 10
 
